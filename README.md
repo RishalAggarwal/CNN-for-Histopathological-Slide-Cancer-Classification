@@ -15,6 +15,8 @@ from 82 patients. The dataset contains both malignant and benign images.
 
 ## Data Preprocessing
 
+### Normalisation
+
 In order to quantitatively analyse histopathology slides using computer
 vision methods, color and stain intensity consistencies need
 to be achieved. Inconsistencies mainly occur due to variations while
