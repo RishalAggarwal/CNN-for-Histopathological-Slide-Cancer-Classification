@@ -6,9 +6,9 @@ Diagnosis of the type of breast cancer using histopathological slides and Deep C
 
 The dataset is described in the following paper:
 
-Spanhol, Fabio & Soares de Oliveira, Luiz & Petitjean, Caroline & Heutte,
+*Spanhol, Fabio & Soares de Oliveira, Luiz & Petitjean, Caroline & Heutte,
 Laurent. (2015). A Dataset for Breast Cancer Histopathological Image
-Classification.
+Classification.*
 
 This dataset contains 7909 breast cancer histopathology images acquired
 from 82 patients. The dataset contains both malignant and benign images.
@@ -24,9 +24,9 @@ preparing slides as well as storage time and conditions. Therefore these
 intensities need to be normalised and the associated stain images need to
 be isolated for further processing.
 
-Normalisation and extraction of stain slides is done via Macenko normalisation. The method of the following is give in M. Macenko, M. Neithammer, J.S. Marron, D. Borland, J. T. Woosley, X.
+Normalisation and extraction of stain slides is done via Macenko normalisation. The method of the following is give in *M. Macenko, M. Neithammer, J.S. Marron, D. Borland, J. T. Woosley, X.
 Guan, C. Schmitt, and N. E. Thomas. A method for normalizing histology
-slides for quantitative analysis. 
+slides for quantitative analysis.* 
 
 The following examples show the effect of this method
 wherein the original image is plotted alongside the hematoxylin stain (affinity for nucleic acids) image that
@@ -50,5 +50,5 @@ On consulting a pathologist it was decided that areas with large concentrations 
 
 ![alt text](https://github.com/RishalAggarwal/CNN-for-Histopathological-Slide-Cancer-Classification/blob/master/ROI_slide.PNG)
 
-This image has been borrowed from the paper Breast cancer multi-classification from histopathological images with
-structured deep learning model. Z Han, B Wei, Y Zheng, Y Yin, K Li, S Li
+*This image has been borrowed from the paper Breast cancer multi-classification from histopathological images with
+structured deep learning model. Z Han, B Wei, Y Zheng, Y Yin, K Li, S Li*
