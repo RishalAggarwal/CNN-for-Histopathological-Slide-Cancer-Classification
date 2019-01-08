@@ -34,3 +34,10 @@ has been extracted from it.
 
 ![alt text](https://github.com/RishalAggarwal/CNN-for-Histopathological-Slide-Cancer-Classification/blob/master/norm_slide.png)
 
+### Augmentation
+
+A 60-20-20 train,test,validation split was used. Furthermore multpile augmentation techniques such as random rotations, hieght and width shifts,horizontal and vertical flips were used.
+
+## Classification
+
+
