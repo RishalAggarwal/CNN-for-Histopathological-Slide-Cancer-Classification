@@ -32,5 +32,5 @@ The following examples show the effect of this method
 wherein the original image is plotted alongside the hematoxylin stain (affinity for nucleic acids) image that
 has been extracted from it.
 
-[!alt text](https://github.com/RishalAggarwal/CNN-for-Histopathological-Slide-Cancer-Classification/blob/master/norm_slide.png)
+![alt text](https://github.com/RishalAggarwal/CNN-for-Histopathological-Slide-Cancer-Classification/blob/master/norm_slide.png)
 
