@@ -50,5 +50,5 @@ On consulting a pathologist it was decided that areas with large concentrations 
 
 ![alt text](https://github.com/RishalAggarwal/CNN-for-Histopathological-Slide-Cancer-Classification/blob/master/ROI_slide.PNG)
 
-*This image has been borrowed from the paper Breast cancer multi-classification from histopathological images with
+This image has been borrowed from the paper *Breast cancer multi-classification from histopathological images with
 structured deep learning model. Z Han, B Wei, Y Zheng, Y Yin, K Li, S Li*
