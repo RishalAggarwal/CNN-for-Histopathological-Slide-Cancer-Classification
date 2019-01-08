@@ -40,4 +40,15 @@ A 60-20-20 train,test,validation split was used. Furthermore multpile augmentati
 
 ## Classification
 
+VGG-7 architecture, Resnet and Resnet-inception V4 classifiers were used for the classification task. They all showed results near 82% accuracy. To check the areas of interest identified by the VGG classifier Class Activation Maps (CAMs) were built. These CAMs showed that the classifier does not have a well defined area of interest and thus these areas will need to be localised before applying the classification task.An example of a Class Activation Map that was extracted is given below.
 
+![alt text](https://github.com/RishalAggarwal/CNN-for-Histopathological-Slide-Cancer-Classification/blob/master/CAM%20imgs/40x/benign/adenosis/SOB_B_A-14-29960AB-40-008_cam.png)
+
+## Future Steps
+
+On consulting a pathologist it was decided that areas with large concentrations of nucleii could be ares of interests for this task. Therefore an algorithm has to be designed to localise these areas possibly through a clustering algorithm after approximate positions of nucleii are found using a LOG filter or other methods. Examples of these areas of interests are given in the image below.
+
+![alt text](https://github.com/RishalAggarwal/CNN-for-Histopathological-Slide-Cancer-Classification/blob/master/ROI_slide.PNG)
+
+This image has been borrowed from the paper Breast cancer multi-classification from histopathological images with
+structured deep learning model. Z Han, B Wei, Y Zheng, Y Yin, K Li, S Li
