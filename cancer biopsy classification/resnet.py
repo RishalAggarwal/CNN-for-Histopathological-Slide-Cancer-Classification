@@ -19,6 +19,8 @@ from keras.regularizers import l2
 from keras import backend as K
 from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import ModelCheckpoint
+
+#model functions
 def _bn_relu(input):
     """Helper to build a BN -> relu block
     """
@@ -178,7 +180,7 @@ def _get_block(identifier):
         return res
     return identifier
 
-
+#resnetbuilder class
 class ResnetBuilder(object):
     @staticmethod
     def build(input_shape, num_outputs, block_fn, repetitions):
@@ -248,6 +250,7 @@ class ResnetBuilder(object):
     def build_resnet_152(input_shape, num_outputs):
         return ResnetBuilder.build(input_shape, num_outputs, bottleneck, [3, 8, 36, 3])
 
+#data generators and augmentation    
 train_datagen = ImageDataGenerator(
         horizontal_flip=True,
         rotation_range=90,
@@ -278,7 +281,7 @@ nb_classes=2
 img_channels=3
 img_rows=460
 img_cols=700
-
+#model loading and training
 model = ResnetBuilder.build_resnet_50((img_channels, img_rows, img_cols), nb_classes)
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 checkpt = ModelCheckpoint('resnet_models/40X/weights.{epoch:02d}.hdf5', monitor='val_acc', verbose=1,
@@ -291,6 +294,7 @@ checkpt = ModelCheckpoint('resnet_models/40X/weights.{epoch:02d}.hdf5', monitor=
         validation_data=test_generator,
         validation_steps=101,
         epochs=50)'''
+#testing
 model.load_weights('D:\\Rishal\\PycharmProjects\\sop\\resnet_models\\40X\\weights.08.hdf5')
 scores = model.evaluate_generator(test_generator,steps=101,verbose=1)
 print("Accuracy = ", scores[1])
