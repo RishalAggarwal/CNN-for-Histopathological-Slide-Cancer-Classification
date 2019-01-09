@@ -19,19 +19,11 @@ from keras.initializers import glorot_normal
 from keras.utils import np_utils
 from keras import backend as K
 
-#BATCH_NORM = True
 
-#batch_size = 32
 num_classes = 2
-#epochs = 100
-#data_augmentation = True
-def flatter(img):
-    img=np.squeeze(img)
-    return img
-'''always define steps per epoch'''
+#data generators and augmentation
 train_datagen = ImageDataGenerator(
         horizontal_flip=True,
-        preprocessing_function=flatter,
         rotation_range=90,
         width_shift_range=0.3,
         height_shift_range=0.3,
@@ -63,7 +55,7 @@ def global_average_pooling(x):
 
 def global_average_pooling_shape(input_shape):
     return (input_shape[0],input_shape[3])
-
+#model definition
 def base_model():
     model = Sequential()
     model.add(BatchNormalization(input_shape=(460,700,3)))
@@ -97,12 +89,13 @@ def base_model():
     model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
     return model
 model=base_model()
+#callbacks
 callback=[]
 csvlogger=callbacks.CSVLogger
 checkpt=ModelCheckpoint('vgg_models/40X/weights.{epoch:02d}_CAM.hdf5', monitor='val_acc',verbose=1,save_best_only=True)
 callback.append(csvlogger)
 callback.append(checkpt)
-
+#training
 '''model.fit_generator(
         train_generator,
         steps_per_epoch=80,
@@ -111,7 +104,7 @@ callback.append(checkpt)
         validation_data=test_generator,
         validation_steps=27,
         epochs=50)'''
-
+#testing
 model.load_weights('D:\\Rishal\\PycharmProjects\\sop\\vgg_models\\40X\\weights.02_CAM.hdf5')
 scores = model.evaluate_generator(val_generator,steps=26,verbose=1)
 print("Accuracy = ", scores[1])
