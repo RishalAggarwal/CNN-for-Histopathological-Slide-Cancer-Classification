@@ -30,7 +30,7 @@ def get_output_layer(model, layer_name):
     layer_dict = dict([(layer.name, layer) for layer in model.layers])
     layer = layer_dict[layer_name]
     return layer
-def visualize_class_activation_map(model_path, img_path_norm,img_path_rgb, output_path):
+def visualize_class_activation_map(model_path, img_path_norm,img_path_rgb, output_path): #model path, normalised image path, original image path
     model = load_model(model_path)
     original_img = io.imread(img_path_norm)
     original_img=np.expand_dims(original_img,axis=0)
