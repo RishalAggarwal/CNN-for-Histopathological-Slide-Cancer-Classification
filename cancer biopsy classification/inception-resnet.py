@@ -26,7 +26,7 @@ from keras import backend as K
 
 BASE_WEIGHT_URL = 'https://github.com/myutwo150/keras-inception-resnet-v2/releases/download/v0.1/'
 
-
+#model functions
 def preprocess_input(x):
     """Preprocesses a numpy array encoding a batch of images.
     This function applies the "Inception" preprocessing which converts
@@ -414,7 +414,7 @@ def InceptionResNetV2(include_top=True,
         model.load_weights(weights_path)
 
     return model
-
+#data generators and augmentation
 train_datagen = ImageDataGenerator(
         horizontal_flip=True,
         rotation_range=90,
@@ -441,7 +441,7 @@ val_generator = test_datagen.flow_from_directory(
         target_size=(460, 700),
         class_mode='categorical')
 class_names = ['benign', 'malignant']
-
+#model loading and training
 model=InceptionResNetV2(include_top=False,
                       weights=None,
                       input_tensor=None,
@@ -461,6 +461,7 @@ checkpt = ModelCheckpoint('inception_resnet_models/40X/weights.{epoch:02d}.hdf5'
         validation_data=test_generator,
         validation_steps=101,
         epochs=50)'''
+#testing
 model.load_weights('D:\\Rishal\\PycharmProjects\\sop\\inception_resnet_models\\40X\\weights.09.hdf5')
 scores = model.evaluate_generator(test_generator,steps=101,verbose=1)
 print("Accuracy = ", scores[1])
