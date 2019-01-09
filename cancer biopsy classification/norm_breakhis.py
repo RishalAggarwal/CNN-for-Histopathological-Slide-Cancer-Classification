@@ -39,6 +39,7 @@ def compute_macenko_norm_matrix(im, alpha=1.0, beta=0.15):
 
     #he1_from_rgb = linalg.inv(rgb_from_he1)
     return stain_matrix.transpose()
+#go to directory and load images for normalisation
 io.use_plugin('pil')
 benign_path='D:\\Rishal\\BreaKHis_v1\\BreaKHis_v1\\histology_slides\\breast\\malignant\\SOB'
 for roots,dirs,files in os.walk(benign_path):
