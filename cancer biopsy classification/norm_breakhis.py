@@ -50,6 +50,7 @@ for roots,dirs,files in os.walk(benign_path):
                 file_name=file.split('.')[0]
                 norm_img_kernel = compute_macenko_norm_matrix(img, alpha=1.0, beta=0.15)
                 norm_img_kernel = preprocessing.normalize(norm_img_kernel)
+                #deconvolution
                 decon_kernel = np.linalg.inv(norm_img_kernel)
                 img1 = img
                 img1[img1 == 0] = 1
