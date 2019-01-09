@@ -81,6 +81,7 @@ def base_model():
     model.add(Activation('relu'))
     model.add(Conv2D(512, (3, 3)))
     model.add(Activation('relu'))
+    #global average pooling layer for CAMs
     model.add(Lambda(global_average_pooling,
                      output_shape=global_average_pooling_shape))
     model.add(Dense(num_classes))
